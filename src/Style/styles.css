@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Roboto:wght@300;400&display=swap');
+
+:root {
+    --primary-color: #ffd700; /* Gold */
+    --secondary-color: #45a29e; /* Teal */
+    --dark-bg: #121212;
+    --light-text: #c5c6c7;
+    --dark-surface: #1a1a1d;
+}
+
+/* General Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--dark-bg);
+    color: var(--light-text);
+}
+
+.container {
+    width: 80%;
+    margin: 5rem auto;
+    text-align: center;
+    padding: 2rem;
+}
+
+.container h1 {
+    font-family: 'Cinzel', serif;
+    color: var(--primary-color);
+    font-size: 3rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.container p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+/* Remove old header styles as NavInicio has its own */
+header { display: none; }

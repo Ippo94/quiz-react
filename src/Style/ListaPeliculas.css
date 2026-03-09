@@ -1,0 +1,44 @@
+.peliculas-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2.5rem;
+    padding: 3rem;
+    width: 90%;
+    margin: 2rem auto;
+}
+
+.pelicula-card {
+    background: #1c1c1e;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #ffd700;
+}
+
+.pelicula-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 25px rgba(255, 215, 0, 0.4);
+}
+
+.pelicula-card img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    display: block;
+}
+
+.pelicula-card h2 {
+    font-size: 1.5rem;
+    padding: 1rem 1.5rem 0.5rem;
+    margin: 0;
+    color: #ffd700;
+    font-family: 'Cinzel', serif;
+}
+
+.pelicula-card p {
+    font-size: 1rem;
+    padding: 0 1.5rem 1.5rem;
+    margin: 0;
+    color: #c5c6c7;
+}

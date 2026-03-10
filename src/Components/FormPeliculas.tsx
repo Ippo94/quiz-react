@@ -4,14 +4,20 @@ import { useState } from "react"
 import { Link } from "react-router-dom"
 import { postData } from "../../Services/Services.js"
 import '../Style/FormPeliculas.css';
+
+type Pelicula= {
+       NombrePelicula: string,
+       Genero:  string,
+       URL: string
+}
 // Importamos el módulo 'ServicesUsuario' que contiene las funciones para interactuar con los datos de los usuarios.
 
 function FormPelicula() {
   
-    const [NombrePelicula, setNombrePelicula] = useState("")
+    const [NombrePelicula, setNombrePelicula] = useState<string>("")
     
-    const [GeneroPelicula, setGeneroPelicula] = useState("")
-    const [UrlPelicula, setUrlPelicula] = useState("")
+    const [GeneroPelicula, setGeneroPelicula] = useState<string>("")
+    const [UrlPelicula, setUrlPelicula] = useState<string>("")
 
     async function registroPelicula() {
 
@@ -20,20 +26,22 @@ function FormPelicula() {
             // Se podría agregar un 'return' aquí para evitar que el código continúe si los campos no están llenos.
             return;
         }
+        const objPelicula : Pelicula ={
+            NombrePelicula: NombrePelicula,
+            Genero : GeneroPelicula,
+            URL : UrlPelicula
+
+
+        }
 
         // Creamos un objeto 'objUsuario' con los datos del formulario.
-        const objPelicula = {
-            NombrePelicula: NombrePelicula,
-            Genero:  GeneroPelicula,
-            URL: UrlPelicula
+        const PeliculaAlmacenados = await postData(objPelicula)
+        // Imprimimos en la consola la respuesta del servidor.
+        console.log(PeliculaAlmacenados);
         }
 
         // Llamamos a la función 'postData' de 'ServicesUsuario' para enviar los datos del nuevo usuario al servidor.
         // El primer argumento es el objeto de usuario y el segundo es el endpoint o recurso donde se guardarán los datos.
-        const PeliculaAlmacenados = await postData(objPelicula,"peliculas")
-        // Imprimimos en la consola la respuesta del servidor.
-        console.log(PeliculaAlmacenados);
-    }
 
     // El método 'return' contiene el JSX que se renderizará en el DOM.
     return (

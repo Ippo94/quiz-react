@@ -3,7 +3,7 @@ import { getData } from "../../Services/Services.js"
 import '../Style/ListaPeliculas.css';
 
 function ListaPeliculas() {
-    const [peliculas,setPeliculas] = useState([])
+    const [peliculas,setPeliculas] = useState <any[]> ([])
 
     useEffect(()=>{
         async function traerPeliculas() {

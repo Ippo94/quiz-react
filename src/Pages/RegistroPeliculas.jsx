@@ -1,7 +1,6 @@
 import FormPelicula from "../Components/FormPeliculas.jsx";
-import NavInicio from "../components/NavInicio.jsx";
 import FooterInicio from "../Components/FooterInicio.jsx";
-
+import NavInicio from "../Components/NavInicio.js";
 
 function RegistroPeliculas () {
     return(

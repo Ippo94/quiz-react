@@ -3,9 +3,12 @@ import { getData } from "../../Services/Services.js";
 import '../Style/FormLogin.css';
 
 function Formlogin() {
-    const [nombreUsuario,setNombreUsuario] = useState("")
-    const [passwordUsuario,setPasswordUsuario] = useState("")
-    const [usuario, setUsuario] = useState([])
+    const [nombreUsuario,setNombreUsuario] = useState<string>("")
+    const [passwordUsuario,setPasswordUsuario] = useState<string> ("")
+    const [usuario, setUsuario] = useState<any[]>([])
+
+
+
 
     useEffect(() => {
         async function cargarUsuarios() {

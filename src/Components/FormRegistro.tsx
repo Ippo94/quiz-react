@@ -7,14 +7,19 @@ import '../Style/FormRegistro.css';
 // Importamos el módulo 'ServicesUsuario' que contiene las funciones para interactuar con los datos de los usuarios.
 
 // Definimos el componente de función 'FormRegistro'.
+type Usuario = {
+    usuario: string,
+    correo: string,
+    password: string
+}
 function FormRegistro() {
     // Declaramos tres estados utilizando 'useState' para controlar los valores de los campos del formulario.
     // 'nombreUsuario' para el nombre de usuario, inicializado como una cadena vacía.
-    const [nombreUsuario, setNombreUsuario] = useState("")
+    const [nombreUsuario, setNombreUsuario] = useState<string>("")
     // 'correoUsuario' para el correo electrónico, inicializado como una cadena vacía.
-    const [correoUsuario, setCorreoUsuario] = useState("")
+    const [correoUsuario, setCorreoUsuario] = useState<string>("")
     // 'passwordUsuario' para la contraseña, inicializado como una cadena vacía.
-    const [passwordUsuario, setpasswordUsuario] = useState("")
+    const [passwordUsuario, setpasswordUsuario] = useState<string>("")
 
     // Definimos una función asíncrona 'registroUsuario' para manejar el registro de un nuevo usuario.
     async function registroUsuario() {
@@ -28,13 +33,13 @@ function FormRegistro() {
             // Se podría agregar un 'return' aquí para evitar que el código continúe si los campos no están llenos.
             return;
         }
-
-        // Creamos un objeto 'objUsuario' con los datos del formulario.
-        const objUsuario = {
+           const objUsuario: Usuario = {
             usuario: nombreUsuario,
-            correo: correoUsuario,
+            correo:correoUsuario,
             password: passwordUsuario
         }
+
+        // Creamos un objeto 'objUsuario' con los datos del formulario.
 
         // Llamamos a la función 'postData' de 'ServicesUsuario' para enviar los datos del nuevo usuario al servidor.
         // El primer argumento es el objeto de usuario y el segundo es el endpoint o recurso donde se guardarán los datos.
